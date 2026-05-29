@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Gerenciamento de Tarefas</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+
+    <!-- A grey horizontal navbar that becomes vertical on small screens -->
+    <nav class="navbar navbar-expand-sm bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand">Sistema de Gerenciamento de Tarefas</a>
+        
+            <!-- Botão para abrir formulário -->
+            <div class="d-flex">
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleForm" aria-expanded="false" aria-controls="collapsibleForm">
+                    + Nova Tarefa
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-4">
+        <!-- Formulário colapsável -->
+        <div class="collapse" id="collapsibleForm">
+            <div class="card card-body mb-4">
+                <form id="formTarefa" class="row g-3">
+                    <div class="col-12">
+                        <label for="tituloTarefa" class="form-label">Título da tarefa</label>
+                        <input type="text" class="form-control" id="tituloTarefa" placeholder="Digite o título" required>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-success">Adicionar</button>
+                        <button type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#collapsibleForm">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Quadro Kanban -->
+        <div class="row g-3">
+            <!-- Coluna A fazer -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">A fazer</h5>
+                    </div>
+                <div class="card-body" id="colAfazer">
+                    <!-- Tarefas serão inseridas aqui -->
+                    <p class="text-muted mb-0">Nenhuma tarefa ainda.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Coluna Em progresso -->
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header bg-warning">
+                    <h5 class="mb-0">Em progresso</h5>
+                </div>
+                <div class="card-body" id="colEmProgresso">
+                    <p class="text-muted mb-0">Nenhuma tarefa ainda.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Coluna Concluído -->
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header bg-success text-white">
+                    <h5 class="mb-0">Concluído</h5>
+                </div>
+                <div class="card-body" id="colConcluido">
+                    <p class="text-muted mb-0">Nenhuma tarefa ainda.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
